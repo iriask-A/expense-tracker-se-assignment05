@@ -1,1 +1,2 @@
-pytest
+# Runtime: standard library only (no third-party runtime dependencies).
+# Development/test tools are pinned in requirements-dev.txt.

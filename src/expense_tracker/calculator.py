@@ -1,5 +1,3 @@
-from .models import Expense
-
 
 def total(expenses):
     return sum(e.amount for e in expenses)
