@@ -22,10 +22,15 @@ def main(argv=None):
 
     if args.cmd == "add":
         try:
+            expense = Expense(args.description, args.amount, args.category)
+        except ValueError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        try:
             items = load(args.file)
         except FileNotFoundError:
             items = []
-        items.append(Expense(args.description, args.amount, args.category))
+        items.append(expense)
         save(items, args.file)
         print("added")
     else:
